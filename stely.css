@@ -1,0 +1,164 @@
+/* Variáveis para padronizar as cores */
+:root {
+    --primary-color: #3b82f6;
+    --danger-color: #ef4444;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --text-muted: #9ca3af;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+}
+
+/* Container responsivo */
+.container {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    background-color: var(--card-bg);
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Área de input */
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+#item-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-add {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #2563eb;
+}
+
+/* Estilos da Lista */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Checkbox estilizado (básico) */
+li input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Nome do item */
+li span {
+    flex: 1;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+/* Classe aplicada via JS quando concluído */
+li.completed span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+/* Botão de remover */
+.btn-remove {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-remove:hover {
+    transform: scale(1.1);
+}
+
+/* Alerta de rodapé (Toast) */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #374151;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Ocultar o alerta */
+.toast.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 20px);
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .btn-add {
+        width: 100%;
+    }
+}

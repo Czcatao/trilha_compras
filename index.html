@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="btn-back">⬅ Voltar</button>
+            <h1>Quicklist</h1>
+        </header>
+
+        <main>
+            <form id="add-form" class="input-group">
+                <input type="text" id="item-input" placeholder="O que você precisa comprar?">
+                <button type="submit" class="btn-add">Adicionar item</button>
+            </form>
+
+            <ul id="shopping-list">
+                </ul>
+        </main>
+    </div>
+
+    <div id="alert-toast" class="toast hidden">
+        Item removido da lista! 🗑️
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
